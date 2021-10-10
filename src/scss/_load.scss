@@ -1,0 +1,47 @@
+:root{ 
+  --shadow:rgba(0, 0, 0, 0.75);
+}
+
+body.dark{ 
+  --shadow:rgba(255, 255, 255, 0.75);
+}
+
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.loading:only-child::after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  box-shadow: var(--shadow) 1.5em 0 0 0, var(--shadow) 1.1em 1.1em 0 0, var(--shadow) 0 1.5em 0 0, var(--shadow) -1.1em 1.1em 0 0, var(--shadow) -1.5em 0 0 0, var(--shadow) -1.1em -1.1em 0 0, var(--shadow) 0 -1.5em 0 0, var(--shadow) 1.1em -1.1em 0 0;
+}    
+
+@keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .loading::after{ 
+    animation: none !important;
+  }
+}

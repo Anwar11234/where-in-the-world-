@@ -1,0 +1,25 @@
+.visually-hidden {
+    position: absolute;
+    top: auto;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+}
+
+.container{ 
+    padding: 1rem 0;
+    width: 90%;
+    max-width: 80rem;
+    margin: auto;
+}
+
+.flex{ 
+    display: flex;
+    align-items: center;
+    
+    &-between{ 
+        justify-content: space-between;
+    }
+}
